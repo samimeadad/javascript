@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+	<head lang="en"	meta charset="UTF-8">
+		<style>
+			body {
+			    background-color: #d0e4fe;
+			}
+
+			h1 {
+			    color: orange;
+			    text-align: center;
+			}
+
+			p {
+			    font-family: "Times New Roman";
+			    font-size: 20px;
+			    text-align: center;
+			}
+		</style>
+		<title>Simple Math Operations</title>
+	</head>
+
+	<body>
+		<h1><b>JavaScript Class Practices</b></h1>
+		<p>
+			Simple Math Operations
+		</P>
+		<p>	
+		<form name="calculation">
+			<fieldset>
+			<legend><b>ENTER YOUR VALUES HERE:</b></legend>
+			<b>First Number:</b><br>
+			<input id="num1" name="first">
+			<br>
+			<b>Second Number:</b><br>
+			<input id="num2" name="second">
+			</fieldset>
+		</form>
+		</p>
+
+		<p>
+		<fieldset>
+		<legend><b>PLEASE PRESS FOR CALCUATION:</b></legend>
+		<input type="button" value="ADD" onclick="sum()">
+		<input type="button" value="SUBTRACT" onclick="subtract()">
+		<input type="button" value="DIVIDE" onclick="division()">
+		<input type="button" value="MULTIPLY" onclick="multiply()">
+		<input type="button" value="RESET" onclick="reset()">
+		</fieldset>
+		</p>
+
+	
+		<fieldset>
+		<legend><b>RESULT:</b></legend>
+		<p id="output"></p>
+		</fieldset>
+
+		<br><br>
+
+		<script>
+			function sum()
+			{
+				var x = parseInt(document.getElementById("num1").value);
+				var y = parseInt(document.getElementById("num2").value);
+				var sum = parseInt(x+y);
+				//document.write("The Summation is ", sum);
+				//alert("The Summation Result:  " + sum);
+				document.getElementById('output').innerHTML = "The Sum is " + sum;
+			}
+			
+			function subtract() 
+			{
+				var x = parseInt(document.getElementById("num1").value);
+				var y = parseInt(document.getElementById("num2").value);
+				var subtract = parseInt(x-y);
+				//document.write("The Summation is ", sum);
+				//alert("The Subtraction Result:  " + subtract);
+				document.getElementById('output').innerHTML = "The Subtraction Result is " + subtract;
+			}
+
+			function division() 
+			{
+				var x = parseInt(document.getElementById("num1").value);
+				var y = parseInt(document.getElementById("num2").value);
+				var division = x/y;
+				//document.write("The Summation is ", sum);
+				//alert("The Division Result:  " + division);
+				document.getElementById('output').innerHTML = "The Division Result is " + division;
+			}
+
+			function multiply() 
+			{
+				var x = parseInt(document.getElementById("num1").value);
+				var y = parseInt(document.getElementById("num2").value);
+				var multiply = x*y;
+				//document.write("The Summation is ", sum);
+				//alert("The Multiplication Result:  " + multiply);
+				document.getElementById('output').innerHTML = "The Multiplication is " + multiply;
+			}
+
+			function reset()
+			{
+				document.getElementById("num1").value = "";
+				document.getElementById("num2").value = "";
+				document.getElementById('output').innerHTML = "";
+				document.close();	
+			}
+
+			//alert("Hello World");
+			//alert(number3);
+			//console.log(number3);
+			//document.write(number3);
+			//document.write("<div>HelloWorld</div>");
+			//document.writeln("HelloWorld2");
+			//document.writeln("HelloWorld3");
+			//document.writeln("HelloWorld4");
+			//document.write("HelloWorld5");
+
+			//document.getElementById('output').innerHTML="We are in class by DOM Traversal";
+			/*function validateForm() 
+			{
+	    		var z = document.forms["calculation"]["first"].value;
+	    		if (z == null || z == "") {
+	        	alert("Name must be filled out");
+	        	return false;
+    		}*/
+
+		</script>
+
+	</body>
+</html>

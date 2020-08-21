@@ -1,0 +1,70 @@
+<html>
+<head>
+
+</head>
+<body>
+    <div id="listSample">
+        <ul>
+            <li><img src="img1.jpg" width="300" height="200"</li>
+            <li><img src="img2.jpg" width="300" height="200"></li>
+            <li><img src="img3.jpg" width="300" height="200"></li>
+        </ul>
+    </div>
+
+    <input type="button", value="Start", onclick="counter()" />
+    <input type="button" , value="Stop" , onclick="stopCounter()" />
+    <script>
+
+        var cars = ['Sedan', 'Toyota', 'Honda', 'Porse'];
+
+        console.log(cars.join("_") + ":;" + typeof cars.join("_"));
+
+        var make = [
+                ['1990', '2000', '2010'],
+                ['1900', '1910', '1920', '1930'],
+                ['1800', '1850'],
+                ['2222', '2233', '2244']
+        ];
+        cars[4] = 'Yamaha';
+        cars[6] = 'BMW';
+        console.log(cars.sort());
+
+        var arrLength = cars.length;
+        var str = "<select id='car' onchange='loadMake()'>";
+        for (i = 0; i < arrLength; i++) {
+            //        if(typeof cars[i] == 'undefined'){
+            //            continue;
+            //        }
+            if (cars[i]) {
+                str += "<option>" + cars[i] + "</option>";
+            }
+        }
+        str += "</select>";
+        document.getElementById('listSample').innerHTML += str;
+
+        var carIndex = 0;
+
+        function loadMake() {
+            var makeStr = '<select>';
+            carIndex = document.getElementById('car').options.selectedIndex;
+            for (i = 0; i < make[carIndex].length; i++) {
+                makeStr += "<option>" + make[carIndex][i] + "</option>";
+            }
+            makeStr += "</select>";
+            document.getElementById('listSample').innerHTML += makeStr;
+        }
+
+        var i = 0;
+        var timer = 1000;
+        function counter() {
+            console.log(i++);
+            setTimeout(counter, timer);
+        };
+        
+        function stopCounter() {
+            clearTimeout(timer);
+        }
+
+    </script>
+</body>
+</html>

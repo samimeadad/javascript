@@ -1,0 +1,25 @@
+<div id="listSample"></div>
+
+<script>
+
+    var cars = ['sedan', 'Toyota', 'Honda', 'Porse'];
+    cars[4] = 'Yamaha';
+    cars[6]= 'BMW';
+
+    var arrLength = cars.length;
+    var str="<ul>";
+    for(i=0; i < arrLength; i++){
+//        if(typeof cars[i] == 'undefined'){
+//            continue;
+//        }
+        if(cars[i]) {
+            str += "<li>" + cars[i] + "</li>";
+        }
+    }
+    str += "</ul>";
+    document.getElementById('listSample').innerHTML = str;
+
+    console.log(cars);
+    console.log(cars.length);
+
+</script>

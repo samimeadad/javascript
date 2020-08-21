@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head lang="en"	meta charset="UTF-8">
+    <style>
+        body {
+            background-color: #d0e4fe;
+        }
+
+        h1 {
+            color: red;
+            text-align: center;
+        }
+
+        p {
+            font-family: "Times New Roman";
+            font-size: 20px;
+            text-align: left;
+        }
+    </style>
+    <title>Print Array</title>
+</head>
+<body>
+
+<h1>JAVASCRIPT CLASS PRACTICE: ARRAY PRINTING</b></h1>
+
+
+<input type="button" value="PRINT ARRAY" onclick="printArray()">
+
+<br><br>
+
+<p id="output"></p>
+
+<script>
+    var printArray = function()
+    {
+        var cars = Array('Toyota', 'BMW', 'Honda', 'Sedan', 'Porsche');
+        cars[8] = 'TATA';
+        var output = "";
+        var len = cars.length;
+        var i = 0;
+
+        document.getElementById('output').innerHTML="";
+
+        output += "<ul>";
+        for(i=0; i<len; i++)
+        {
+            if (typeof (cars[i]) != 'undefined') //if(cars[i])
+                output += "<li>" + cars[i] + "</li>";
+        }
+        output += "</ul>";
+        document.getElementById('output').innerHTML = output;
+        document.close();
+    }
+</script>
+</body>
+</html>

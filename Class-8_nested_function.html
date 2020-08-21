@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+	<body>
+		<script>
+			function xyz()
+			{
+				return function(){
+					alert("Hello");
+				}
+			}
+			console.log(xyz());
+			(xyz())();
+			var abc = xyz();
+			abc();
+		</script>
+
+	</body>
+</html>

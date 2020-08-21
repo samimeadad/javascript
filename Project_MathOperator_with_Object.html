@@ -1,0 +1,159 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head lang="en"	meta charset="UTF-8">
+        <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<style>
+			body {
+			    background-color: #d0e4fe;
+			}
+
+			h1 {
+			    color: orange;
+			    text-align: center;
+			}
+
+			p {
+			    font-family: "Times New Roman";
+			    font-size: 20px;
+			    text-align: center;
+			}
+		</style>
+		<title>Simple Math Operations</title>
+	</head>
+
+	<body>
+		<h1><b>JavaScript Project</b></h1>
+		<p>
+			Simple Math Operations
+		</P>
+
+		<p>
+		<form name="calculation">
+			<fieldset>
+			<legend><b>ENTER YOUR VALUES HERE:</b></legend>
+			<b>First Number:</b><br>
+			<input id="num1" name="first">
+			<br>
+			<b>Second Number:</b><br>
+			<input id="num2" name="second">
+			</fieldset>
+		</form>
+		</p>
+
+		<p>
+		<fieldset>
+		    <legend><b>PLEASE PRESS FOR CALCUATION:</b></legend>
+		    <input type="button" value="ADD" onclick="myCalculator.showSum()">
+		    <input type="button" value="SUBTRACT" onclick="myCalculator.showSubtract()">
+		    <input type="button" value="DIVIDE" onclick="myCalculator.showDivision()">
+		    <input type="button" value="MULTIPLY" onclick="myCalculator.showMultiply()">
+            <input type="button" value="MODULUS" onclick="myCalculator.showModulus()">
+		    <input type="button" value="RESET" onclick="myCalculator.reset()">
+		</fieldset>
+		</p>
+
+
+		<fieldset>
+		<legend><b>RESULT:</b></legend>
+		<p id="output"></p>
+		</fieldset>
+
+		<br><br>
+
+		<script>
+            var myCalculator = {
+                summation: function(){
+                    var fNumber = parseFloat(document.getElementById("num1").value);
+                    var sNumber = parseFloat(document.getElementById("num2").value);
+
+                    var sum = parseFloat(fNumber + sNumber);
+
+                    return sum;
+                },
+
+                subtract: function(){
+                    var fNumber = parseFloat(document.getElementById("num1").value);
+                    var sNumber = parseFloat(document.getElementById("num2").value);
+
+                    var subtract = NaN;
+
+                    if(fNumber>sNumber)
+                        subtract = parseFloat(fNumber - sNumber);
+                    if(sNumber>fNumber)
+                        subtract = parseFloat(sNumber - fNumber);
+
+                    return subtract;
+                },
+
+                division: function(){
+                    var fNumber = parseFloat(document.getElementById("num1").value);
+                    var sNumber = parseFloat(document.getElementById("num2").value);
+
+                    var division = NaN;
+
+                    if(sNumber == 0)
+                        alert("ERROR!!! Cannot Divisible by '0'");
+                    else
+                        division = parseFloat(fNumber/sNumber);
+
+                    return division;
+                },
+
+                multiply: function(){
+                    var fNumber = parseFloat(document.getElementById("num1").value);
+                    var sNumber = parseFloat(document.getElementById("num2").value);
+
+                    var multiply = parseFloat(fNumber*sNumber);
+
+                    return multiply;
+                },
+
+                modulus: function(){
+                    var fNumber = parseFloat(document.getElementById("num1").value);
+                    var sNumber = parseFloat(document.getElementById("num2").value);
+                    
+                    var modulus = NaN;
+
+                    if(sNumber == 0)
+                        alert("ERROR!!! Cannot Divisible by '0'");
+                    else
+                        modulus = parseFloat(fNumber%sNumber);
+
+                    return modulus;
+                },
+
+                showSum: function(){
+                    document.getElementById("output").innerHTML = "The Summation: " + myCalculator.summation();
+                    document.close();
+                },
+
+                showSubtract: function(){
+                    document.getElementById("output").innerHTML = "The Subtraction: " + myCalculator.subtract();
+                    document.close();
+                },
+
+                showDivision: function(){
+                    document.getElementById("output").innerHTML = "The Division: " + myCalculator.division();
+                    document.close();
+                },
+
+                showMultiply: function(){
+                    document.getElementById("output").innerHTML = "The Multiplication: " + myCalculator.multiply();
+                    document.close();
+                },
+
+                showModulus: function(){
+                    document.getElementById("output").innerHTML = "The Modulus: " + myCalculator.modulus();
+                    document.close();
+                },
+
+                reset: function(){
+                    document.getElementById("num1").value = "";
+                    document.getElementById("num2").value = "";
+                    document.getElementById('output').innerHTML = "";
+                    document.close();
+                }
+            };
+		</script>
+	</body>
+</html>

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head lang="en"	meta charset="UTF-8">
+    <style>
+        body {
+            background-color: #d0e4fe;
+        }
+
+        h1 {
+            color: red;
+            text-align: center;
+        }
+
+        p {
+            font-family: "Times New Roman";
+            font-size: 20px;
+            text-align: left;
+        }
+
+        table, th, td {
+            border: 1px solid black;
+        }
+    </style>
+    
+<title>Table in HTML</title>
+
+</head>
+
+<body>
+
+<h1>JavaScript Assignment 3: Table in HTML</h1>
+
+<form name="input">
+    <fieldset>
+        <legend><b>ENTER YOUR VALUES HERE:</b></legend>
+        <b>Number of Rows:</b><br>
+        <input id="row" name="row">
+        <br><br>
+        <b>Number of Columns:</b><br>
+        <input id="col" name="column">
+    </fieldset>
+</form>
+
+
+<br><br><br>
+
+<fieldset>
+    <legend><b>PLEASE PRESS TO CREATE TABLE:</b></legend>
+        <input type="button" value="CREATE TABLE" onclick="createTable()">
+        <input type="button" value="RESET" onclick="reset()">
+</fieldset>
+
+<br><br><br>
+
+<fieldset>
+    <legend><b>Result</b></legend>
+<p id="output"></p>
+</fieldset>
+
+<script>
+    function createTable()
+    {
+        var row = parseInt(document.getElementById("row").value);
+        var col = parseInt(document.getElementById("col").value);
+
+        var tablestart="<table id=myTable border=1>";
+        var tableend = "</table>";
+        var trstart = "<tr>";
+        var trend = "</tr>";
+        var tdstart = "<td>";
+        var tdend = "</td>";
+
+        document.write(tablestart);
+
+        for (var r=0;r<row;r++) {
+            document.write(trstart);
+            for(var c=0; c<col; c++) {
+                document.write(tdstart+"Row." + r +" Col."+ c + tdend);
+            }
+            document.write(trend);
+        }
+
+        document.write(tableend);
+        document.close();
+    }
+
+    function reset()
+    {
+        document.getElementById("row").value = "";
+        document.getElementById("col").value = "";
+        document.getElementById('output').innerHTML = "";
+        document.close();   
+    }
+</script>
+</body>
+</html>

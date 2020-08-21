@@ -1,0 +1,105 @@
+    <!DOCTYPE html>
+<html>
+<head lang="en"	meta charset="UTF-8">
+    <style>
+        body {
+            background-color: #d0e4fe;
+        }
+
+        h1 {
+            color: red;
+            text-align: center;
+        }
+
+        p {
+            font-family: "Times New Roman";
+            font-size: 20px;
+            text-align: left;
+        }
+
+        table, th, td {
+            border: 1px solid black;
+        }
+    </style>
+    
+<title>Table in HTML</title>
+
+</head>
+
+<body>
+
+<h1>JavaScript Assignment 3: Draw Table in HTML</h1>
+
+<form name="input">
+    <fieldset>
+        <legend><b>ENTER YOUR VALUES HERE:</b></legend>
+        <b>Number of Rows:</b><br>
+        <input id="row" name="row">
+        <br><br>
+        <b>Number of Columns:</b><br>
+        <input id="col" name="col">
+        </fieldset>
+</form>
+
+
+<br><br><br>
+
+<fieldset>
+    <legend><b>PLEASE PRESS TO CREATE TABLE:</b></legend>
+        <input type="button" value="CREATE TABLE" onclick="drawTable()">
+        <input type="button" value="RESET" onclick="reset()">
+</fieldset>
+
+<br><br><br>
+
+<fieldset>
+    <legend><b>Result</b></legend>
+    <p id="tblContainer"></p>
+</fieldset>
+
+<script>
+
+    var drawColumn = function()
+    {
+        var col = "";
+        for(var i=0; i<arguments[0]; i++)
+            col += "<td>&nbsp;</td>";
+        return col;
+    }
+
+    var drawRow = function()
+    {
+        var NoCol = parseInt(document.getElementById('col').value);
+        var row = "<tr>";
+        for(var i=0; i<arguments[0]; i++)
+        {
+            row += drawColumn(NoCol);
+            row += "</tr>";
+        }
+        return row;
+    }
+
+    var drawTable = function()
+    {
+        var row = parseInt(document.getElementById("row").value);
+
+        var tbl = "";
+            tbl += "<table>";
+            tbl += drawRow(row);
+            tbl += "</table>";
+
+        document.getElementById('tblContainer').innerHTML = tbl;
+
+        document.close();
+    }
+
+    function reset()
+    {
+        document.getElementById("row").value = "";
+        document.getElementById("col").value = "";
+        document.getElementById('tblContainer').innerHTML = "";
+        document.close();   
+    }
+</script>
+</body>
+</html>

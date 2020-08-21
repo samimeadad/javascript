@@ -1,0 +1,43 @@
+﻿<!DOCTYPE html>
+<html>
+<head lang="en" meta charset="UTF-8">
+    <style>
+        body {
+            background-color: #d0e4fe;
+        }
+
+        h1 {
+            color: red;
+            text-align: center;
+        }
+
+        p {
+            font-family: "Times New Roman";
+            font-size: 20px;
+            text-align: left;
+        }
+    </style>
+    <title>Print Array</title>
+</head>
+<body>
+
+    <h1>JAVASCRIPT CLASS PRACTICE: ARRAY PRINTING</b></h1>
+
+
+    <br><br>
+
+    <p id="output"></p>
+
+    <script>
+        var cars = ['Toyota', 'Sedan', 'Honda', 'BMW', 'Porche', 'TATA'];
+        console.log(cars); 
+        var len = cars.length;
+        console.log("Array Length: " + len);
+        cars[7] = 'Mitsubishi';
+        console.log(cars);
+        len = cars.length;
+        console.log("Array Length: " + len);
+        console.log(cars[8]);
+    </script>
+</body>
+</html>

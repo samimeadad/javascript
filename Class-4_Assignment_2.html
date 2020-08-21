@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head lang="en"	meta charset="UTF-8">
+    <style>
+        body {
+            background-color: #d0e4fe;
+        }
+
+        h1 {
+            color: red;
+            text-align: center;
+        }
+
+        p {
+            font-family: "Times New Roman";
+            font-size: 20px;
+            text-align: left;
+        }
+    </style>
+    <title>PRINTING CHARACTER WITH NESTED FOR LOOP</title>
+</head>
+<body>
+
+<h1>JAVASCRIPT ASSIGNMENT 2: NESTED FOR LOOP</b></h1>
+
+
+<form>
+    <b>HOW MANY ROW:</b><br>
+    <input id="limit" name="limit"><br><br>
+    <b>ENTER THE CHARACTER:</b><br>
+    <input id="char" name="char">
+</form>
+
+<br><br>
+
+<input type="button" value="PRINT" onclick="print()">
+
+<br><br>
+
+<p id="output"></p>
+
+<script>
+    function print()
+    {
+        var limit = parseInt(document.getElementById("limit").value);
+        var c = document.getElementById("char").value;
+        var i = 0;
+        var j = 0;
+
+        document.getElementById('output').innerHTML="";
+
+        for(i=0; i<limit; i++)
+        {
+            for(j=0; j<=i; j++)
+               document.getElementById('output').innerHTML += c;
+            document.getElementById('output').innerHTML += "<br>";
+        }
+        document.close();
+    }
+</script>
+</body>
+</html>

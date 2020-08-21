@@ -1,0 +1,44 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Untitled Document</title>
+</head>
+
+<body>
+<script>
+    var car = new Object();
+    console.log(typeof car);
+    car.name = "Toyota";
+    car.door = 4;
+    car.color = "red";
+    car.brakePaddle = new Object();
+    car.brakePaddle.brand = "XYZ";
+    car.brakePaddle.brakeshoe = 4;
+    car.brakePaddle.brake = function(){
+        alert('The car is slowing down');
+    }
+    car.drive = function(){
+        alert('I am driving');
+    }
+    //car.brake = function(){
+        //alert('The car is slowing down');
+    //}
+    car.accelerate = myAccelerate;
+
+    function myAccelerate(){
+        alert('The car is accelerating');
+    }
+    //var car = {name:"Toyota", door:4, color:"red"}; Another way to define object
+    console.log(car);
+    console.log(car.brakePaddle);
+    car.drive();
+    car.brakePaddle.brake();
+    car.accelerate();
+</script>
+
+
+
+
+</body>
+</html>

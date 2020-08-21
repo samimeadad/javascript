@@ -1,0 +1,40 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Untitled Document</title>
+</head>
+
+<body>
+<script>
+    var o = new Object(null);
+    console.log(typeof o);
+    console.log(o);
+
+    var unObj = new Object(undefined);
+    console.log(typeof unObj);
+    console.log(unObj);
+
+    var aBoolObject = new Object(true);
+    console.log(typeof aBoolObject);
+    console.log(aBoolObject);
+
+    var anoBoolObject = new Boolean(true);
+    console.log(typeof anoBoolObject);
+    console.log(anoBoolObject);
+
+    var anImageObject = new Image();
+    console.log(typeof anImageObject);
+    console.log(anImageObject);
+
+
+    var anArrayObject = new Array('Sami', 'Faizul');
+    console.log(typeof anArrayObject);
+    console.log(anArrayObject[1]);
+</script>
+
+
+
+
+</body>
+</html>

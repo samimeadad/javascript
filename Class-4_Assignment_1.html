@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+<head lang="en"	meta charset="UTF-8">
+    <style>
+        body {
+            background-color: #d0e4fe;
+        }
+
+        h1 {
+            color: red;
+            text-align: center;
+        }
+
+        p {
+            font-family: "Times New Roman";
+            font-size: 20px;
+            text-align: left;
+        }
+    </style>
+    <title>Simple For Loop Operation</title>
+</head>
+
+<body>
+
+<h1>JAVASCRIPT ASSIGNMENT 1</h1>
+
+<form name="input">
+    <fieldset>
+        <legend><b>ENTER YOUR VALUES HERE:</b></legend>
+        <b>Start Number:</b><br>
+        <input id="num1" name="first">
+        <br><br>
+
+        <b>End Number:</b><br>
+        <input id="num2" name="second">
+    </fieldset>
+</form>
+
+
+<br><br><br>
+
+<fieldset>
+    <legend><b>PLEASE PRESS FOR RESULT:</b></legend>
+        <input type="button" value="PRINT ALL" onclick="printAll()">
+        <input type="button" value="PRINT ODD" onclick="printOdd()">
+        <input type="button" value="PRINT EVEN" onclick="printEven()">
+        <input type="button" value="ADD ALL" onclick="printSum()">
+        <input type="button" value="RESET" onclick="reset()">
+</fieldset>
+
+<br><br><br>
+
+<fieldset>
+    <legend><b>Result</b></legend>
+<p id="output"></p>
+</fieldset>
+
+<script>
+    function printAll()
+    {
+        var number1 = parseInt(document.getElementById("num1").value);
+        var number2 = parseInt(document.getElementById("num2").value);
+        var i = 0;
+
+        if(number1>number2)
+            alert("START NUMBER CANNOT BE GREATER THAN END NUMBER");
+        else
+        {
+            document.getElementById('output').innerHTML = "";
+            for(i=number1; i<=number2; i++)
+            {
+                document.getElementById('output').innerHTML += i + "<br>";
+            }
+        }
+        document.close();
+    }
+
+    function printOdd()
+    {
+        var number1 = parseInt(document.getElementById("num1").value);
+        var number2 = parseInt(document.getElementById("num2").value);
+        var i = 0;
+
+        if(number1>number2)
+            alert("START NUMBER CANNOT BE GREATER THAN END NUMBER");
+        else
+        {
+            document.getElementById('output').innerHTML = "";
+            for(i=number1; i<=number2; i++)
+            {
+                if(i%2==1)
+                    document.getElementById('output').innerHTML += i + "<br>";
+            }
+        }
+        document.close();
+    }
+
+    function printEven()
+    {
+        var number1 = parseInt(document.getElementById("num1").value);
+        var number2 = parseInt(document.getElementById("num2").value);
+        var i = 0;
+
+        if(number1>number2)
+            alert("START NUMBER CANNOT BE GREATER THAN END NUMBER");
+        else
+        {
+            document.getElementById('output').innerHTML = "";
+            for(i=number1; i<=number2; i++)
+            {
+                if(i%2==0)
+                    document.getElementById('output').innerHTML += i + "<br>";
+            }
+        }
+        document.close();
+    }
+
+    function printSum()
+    {
+        var number1 = parseInt(document.getElementById("num1").value);
+        var number2 = parseInt(document.getElementById("num2").value);
+        var i = 0;
+        var sum=0;
+
+        if(number1>number2)
+            alert("START NUMBER CANNOT BE GREATER THAN END NUMBER");
+        else
+        {
+            document.getElementById('output').innerHTML = "";
+            for(i=number1; i<=number2; i++)
+            {
+                sum += i;
+            }
+            document.getElementById('output').innerHTML += "The Sum: " + sum + "<br>";
+        }
+        document.close();
+    }
+
+    function reset()
+    {
+        document.getElementById("num1").value = "";
+        document.getElementById("num2").value = "";
+        document.getElementById('output').innerHTML = "";
+        document.close();   
+    }
+</script>
+</body>
+</html>

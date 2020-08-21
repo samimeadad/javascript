@@ -1,0 +1,43 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Untitled Document</title>
+</head>
+
+<body>
+<script>
+    var car = {
+        name:"Toyota",
+        door:4,
+        color:"red",
+        seat:5,
+        drive:function(){
+            alert('I am driving');
+        },
+        brakePaddle:{
+            brand:"XYZ",
+            brakeshoe:4,
+            brake:function(){
+                alert('Slowing Down');
+            }
+        },
+        accelerate:function(){
+            alert('Accelerating');
+        }
+    };
+    console.log(car);
+    console.log('The Car Name is ' + car.name);
+    console.log(car.door);
+    console.log(car.seat);
+    console.log(car.brakePaddle);
+    car.drive();
+    car.brakePaddle.brake();
+    car.accelerate();
+</script>
+
+
+
+
+</body>
+</html>

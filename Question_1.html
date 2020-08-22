@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+	<head lang="en"	meta charset="UTF-8">
+        <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<style>
+			body {
+			    background-color: #d0e4fe;
+			}
+
+			h1 {
+			    color: orange;
+			    text-align: center;
+			}
+
+			p {
+			    font-family: "Times New Roman";
+			    font-size: 20px;
+			    text-align: center;
+			}
+		</style>
+		<title>QUESTION NO. 1</title>
+	</head>
+
+	<body>
+		<h1><b>Web Development Answer Sheet</b></h1>
+		<p>
+			<b>Answer to the Question No. 1</b>
+		</P>
+
+		<p>
+		<form name="input">
+			<fieldset>
+				<legend><b>PLEASE ENTER YOUR INFORMATION BELOW:</b></legend>
+				<b>NAME:</b><br>
+				<input id="name" name="name"><br><br>
+				<b>PASSWORD:</b><br>
+				<input id="pass1" name="pass1"><br><br>
+				<b>RE-TYPE PASSWORD:</b><br>
+				<input id="pass2" name="pass2"><br><br>
+				<b>AGE:</b><br>
+				<input id="age" name="age"><br><br>
+				<b>SECTION:</b>
+				<select id="section" name="section">
+    			<option value="BSIT18-A">BSIT18-A</option>
+    			<option value="BSIT18-B">BSIT18-B</option>
+    		</select>
+			</fieldset>
+		</form>
+		</p>
+
+		<p>
+		<fieldset>
+		    <legend><b>PLEASE PRESS FOR SUBMIT YOUR INFORMATION:</b></legend>
+		    <input type="button" value="SUBMIT" onclick="formValidate()">
+		    <input type="button" value="RESET" onclick="reset()">
+		</fieldset>
+		</p>
+
+
+		<fieldset>
+			<legend><b>RESULT:</b></legend>
+			<p id="output"></p>
+		</fieldset>
+
+		<br><br>
+
+		<script>
+    	function formValidate()
+			{
+				var name = String(document.getElementById("name").value);
+        var pass1 = String(document.getElementById("pass1").value);
+				var pass2 = String(document.getElementById("pass2").value);
+				var age = parseInt(document.getElementById("age").value);
+				var section = String(document.getElementById("section").value);
+
+        var name_len = name.length;
+				var pass_len = pass1.length;
+				var sec1 = "BSIT18-A";
+				var sec2 = "BSIT18-B";
+
+				if(name == "")
+					alert("ERROR!!! Name Field Cannot Be EMPTY!");
+				else if(name_len < 4 || name_len > 30)
+        	alert("ERROR!!! Name cannot be less than 4 character or greater than 30 character!!!");
+				else if(pass_len < 6 || pass_len > 12)
+					alert("ERROR!!! INVALID PASSWORD!!! PASSWORD LENGH MUST BE 6 TO 12 CHARACTER LONG!")
+				else if(pass1 == "" && pass2 == "")
+					alert("ERROR!!! Password Field Cannot Be Empty!");
+				else if(pass1 != pass2)
+					alert ("ERROR!!! Password Don't Match!");
+				else if(isNaN(age) || age < 18 || age > 25)
+					alert("ERROR!!! AGE NOT VALID!");
+				else if(section != sec1 && section != sec2)
+					alert("ERROR!!! WRONG SECTION!!!");
+				else
+				{
+					document.getElementById("output").innerHTML = "<b>Your Name: </b>" + name + "<br>" + "<b>Your Password: </b>" + pass1 + "<br>" + "<b>Your Age: </b>" + age + "<br>" + "<b>Your Section: </b>" + section;
+					//Redirect();
+					document.close();
+				}
+
+			}
+
+      function reset()
+			{
+      	document.getElementById("name").value = "";
+        document.getElementById("pass1").value = "";
+				document.getElementById("pass2").value = "";
+				document.getElementById("age").value = "";
+				document.getElementById("section").value = "";
+        document.getElementById('output').innerHTML = "";
+        document.close();
+      }
+
+			function Redirect() {
+				 window.location = "Question_1_Display.html";
+			}
+
+		</script>
+	</body>
+</html>
